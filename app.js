@@ -37,7 +37,7 @@ const userSchema = new mongoose.Schema({
     googleId: String
 });
 
-const secret = 'Donnapandunuts';
+const secret = process.env.SECRET;
 userSchema.plugin(encrypt, { secret: secret, encryptedFields: ['password']});
 
 userSchema.plugin(passportLocalMongoose);
